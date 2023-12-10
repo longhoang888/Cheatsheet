@@ -1,0 +1,203 @@
+Variables and Data Types:
+
+var, let, const: Ways to declare variables. var is function-scoped, let and const are block-scoped.
+Data Types: Number, String, Boolean, null, undefined, Object, Array, Function.
+Arrays:
+
+Declaration: let array = [1, 2, 3];
+Access Element: array[0]; // 1
+Methods: array.push(4);, array.pop();, array.shift();, array.unshift(0);, array.slice(0, 2);, array.splice(0, 1);
+Objects:
+
+Declaration: let obj = { key: 'value' };
+Accessing Properties: obj.key; // 'value', obj['key']; // 'value'
+Functions:
+
+Function Declaration: function myFunc() {}
+Arrow Function: const myFunc = () => {};
+Parameters: function myFunc(param1, param2) {}
+Return: return value;
+Control Structures:
+
+If-Else: if (condition) {} else {}
+Switch: switch(expression) { case x: break; default: }
+For Loop: for (let i = 0; i < 10; i++) {}
+While Loop: while (condition) {}
+Do-While Loop: do {} while (condition);
+String Concatenation/Template Literals:
+
+Concatenation: 'Hello ' + 'world!';
+Template Literals: `Hello ${variable}`;
+Type Conversion:
+
+To String: String(123);, (123).toString();
+To Number: Number('123');, parseInt('123', 10);, parseFloat('123.45');
+To Boolean: Boolean(value);
+Operators:
+
+Assignment: =, +=, -=, *=, /=
+Arithmetic: +, -, *, /, %, ++, --
+Comparison: ==, ===, !=, !==, <, >, <=, >=
+Logical: &&, ||, !
+Error Handling:
+
+Try-Catch: try { } catch (error) { }
+ES6+ Features:
+
+Arrow Functions: const myFunc = () => {};
+Classes: class MyClass {}
+Destructuring: const { key } = obj;, const [firstElement] = array;
+Spread/Rest: ...
+Promises: new Promise((resolve, reject) => {});
+Async/Await: async function asyncFunc() { await promise; }
+DOM Manipulation (Browser-specific):
+
+Select Element: document.querySelector('.class');, document.getElementById('id');
+Event Listener: element.addEventListener('click', eventHandler);
+Set Content: element.textContent = 'text';, element.innerHTML = '<div>Content</div>';
+Console Methods:
+
+Logging: console.log('message');, console.error('error');, console.warn('warning');
+
+Spread Operator (...):
+
+The Spread operator is used to expand or spread an iterable (like an array or an object) into individual elements or properties. It's frequently used in situations where zero or more arguments or elements are expected.
+Examples of Spread Operator:
+
+Array Expansion:
+javascript
+Copy code
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5]; // arr2 is [1, 2, 3, 4, 5]
+Object Cloning:
+javascript
+Copy code
+let obj1 = { a: 1, b: 2 };
+let obj2 = { ...obj1, c: 3 }; // obj2 is { a: 1, b: 2, c: 3 }
+Function Arguments:
+javascript
+Copy code
+function sum(x, y, z) {
+  return x + y + z;
+}
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Expands to sum(1, 2, 3)
+Rest Operator (...):
+
+The Rest operator is used to gather or collect a list of arguments into an array. It is typically used in function definitions to handle an indefinite number of parameters.
+Examples of Rest Operator:
+
+Collecting Arguments:
+
+javascript
+Copy code
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // numbers becomes [1, 2, 3, 4]
+Destructuring with Rest:
+
+javascript
+Copy code
+let [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // 1
+console.log(rest); // [2, 3, 4]
+In destructuring, the Rest operator is used to collect the remaining parts of an array or object that haven't been picked off by earlier patterns.
+
+Array Operations:
+Arrays in JavaScript are used to store lists of items. Common operations include:
+
+Adding Elements:
+push() - Adds an element to the end of the array.
+unshift() - Adds an element to the beginning of the array.
+Removing Elements:
+pop() - Removes the last element from the array.
+shift() - Removes the first element from the array.
+Finding Elements:
+find() - Finds an element based on a test function.
+indexOf() - Finds the index of an element.
+Iterating:
+forEach() - Executes a function for each array element.
+map() - Creates a new array with the results of calling a function for every array element.
+Filtering:
+filter() - Creates a new array with all elements that pass the test implemented by the provided function.
+Map Operations:
+A Map object in JavaScript holds key-value pairs where keys can be of any datatype. Common operations include:
+
+Setting and Getting Values:
+set(key, value) - Sets the value for a key in the Map.
+get(key) - Gets the value for a key in the Map.
+Checking and Removing:
+has(key) - Returns true if the key exists in the Map.
+delete(key) - Removes a specified element from the Map.
+Iterating:
+forEach() - Executes a provided function once for each key-value pair in the Map.
+The Map object is also iterable, so you can use the for...of loop.
+Set Operations:
+A Set object in JavaScript lets you store unique values of any type. Common operations include:
+
+Adding and Removing Elements:
+add(value) - Adds a new element with the given value to the Set.
+delete(value) - Deletes a specified element from the Set.
+Checking for Values:
+has(value) - Returns true if the value exists in the Set.
+Iterating:
+forEach() - Executes a provided function once for each value in the Set.
+Like Map, Set is also iterable and can be used with for...of.
+
+<script type ="text/javascript">
+</script>
+
+<script type="modules">
+  import { javascript.js } from './script/javascript.js'
+  
+</script>
+
+In JavaScript, a module is a file containing JavaScript code that is executed in its own scope. In other words, variables, functions, classes, and expressions defined in a module are not visible outside the module unless they are explicitly exported. Similarly, to use code from another module, you have to import it using the import statement.
+
+Here's a simple example to illustrate how JavaScript modules work:
+
+Creating a Module:
+
+Suppose you have a file named mathModule.js which is your module. This file might look something like this:
+
+javascript
+Copy code
+// mathModule.js
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+In this module, we have two functions, add and subtract, which we export using the export keyword.
+
+Using a Module:
+
+To use the exported functions in another file, say app.js, you would import them like this:
+javascript
+Copy code
+// app.js
+import { add, subtract } from './mathModule.js';
+
+console.log(add(2, 3)); // Output: 5
+console.log(subtract(5, 3)); // Output: 2
+Including Modules in HTML:
+
+To include a JavaScript module in an HTML file, you must specify type="module" in your <script> tag. Here's how you can include app.js in your HTML file:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Module Example</title>
+</head>
+<body>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+This <script> tag loads app.js as a module, which means it can import other modules.
+
+Remember, modules are automatically in strict mode, and they have their own scope. Also, they are deferred by default, which means the script will not block the HTML parsing and will execute after the document has been parsed. 
